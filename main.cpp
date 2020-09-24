@@ -22,7 +22,8 @@ int main (){
     game1.inputGuess();
     cout << "Guess Code is ";
     game1.printCode(game1.guessCode);
-
+    
+    //a while loop that check the user input and secret code
     while(game1.guessNum<10 && game1.winCond==false){
         game1.inputGuess();
         if (game1.rightPosrightNum()== game1.length)
