@@ -1,3 +1,6 @@
+//Padraic Burns and Yi-En Wu, Problem Set 1
+//this file include$ all of the code required to run a mastermind game
+
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
@@ -9,7 +12,8 @@ int length;
 int range; 
 
 
-int main (){
+int main ()
+{
 
     //First need to obtain the input to create the MindGame
     cout << "Please sepecify the length of the code n " << endl; 
@@ -24,9 +28,10 @@ int main (){
     game1.printCode(game1.guessCode);
     
     //a while loop that check the user input and secret code
-    while(game1.guessNum<10 && game1.winCond==false){
+    while(game1.guessNum<10 && game1.winCond == false)
+    {
         game1.inputGuess();
-        if (game1.rightPosrightNum()== game1.length)
+        if (game1.rightPosrightNum() == game1.length)
         {
             game1.winCond = true;
         }
@@ -38,14 +43,13 @@ int main (){
         }      
     }
 
-    if(game1.winCond==true){
+    if(game1.winCond == true)
+    {
         cout<<"Congrats you guessed the code!\n";
-
-
     }
-    else{
+    else
+    {
         cout<<"You didn't guess the code :(\n";
-
     }
     return 0; 
 }

@@ -1,3 +1,5 @@
+//Padraic Burns and Yi-En Wu, Problem Set 1
+//this file include$ all of the code inside of the mastermind game
 #include <iostream>
 #include <stdlib.h>
 #include <vector>
@@ -64,14 +66,14 @@ MindGame::MindGame(int y, int z)
     generateMasterCode();
     cout << "The secret code: ";
     printCode(masterCode);
-    cout<<"\n";
+    cout << "\n";
 } // end of constructor 
 
 void MindGame::printCode(vector <int> c0de)
 //prints a given code, useful for debugging
 {
-    for(int i=0; i<c0de.size(); i++)
-        cout<<c0de[i]<<", ";
+    for(int i = 0; i < c0de.size(); i++)
+        cout << c0de[i]<<", ";
 }
 
 void MindGame::inputGuess()
@@ -105,9 +107,10 @@ int MindGame::rightPosrightNum()
 // returns how many digits are in the correct position
 {
     int count = 0; 
-    for (int i=0; i < masterCode.size(); i++)
+    for (int i = 0; i < masterCode.size(); i++)
     {
-        if (guessCode[i] == masterCode[i]){
+        if (guessCode[i] == masterCode[i])
+        {
             count++;
         } 
     }
@@ -133,12 +136,14 @@ int MindGame::wrongPosrightNum()
     //printCode(copyMasterCode);
     //cout<<"\n";
 
-    int count =0;
-        for(int i=0; i < guessCode.size(); i++){
-
-            for(int j=0; j < copyMasterCode.size(); j++){
+    int count = 0;
+        for(int i = 0; i < guessCode.size(); i++)
+        {
+            for(int j = 0; j < copyMasterCode.size(); j++)
+            {
             //cout<<guessCode[i]<<" compared to "<< copyMasterCode[j]<<"\n";
-                if(guessCode[i]==copyMasterCode[j]){
+                if(guessCode[i] == copyMasterCode[j])
+                {
                 //cout<<"Count increased by 1\n";
                     count++;
                     break;
