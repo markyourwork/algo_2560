@@ -1,63 +1,82 @@
-//Padraic Burns and Yi-En Wu, Problem Set 2
-//this file include$ all of the code inside of the mastermind game
+#include <string>
+#include <vector>
 #include <iostream>
 #include <stdlib.h>
-#include <vector>
-#include <algorithm>
+#include "Code.h"
 
-using namespace std; 
-
-
-class Response 
+class Response
 {
-//
-    public: 
+private:
+	int numberCorrect;
+	int numberIncorrect;
 
-    Response(); 
 
-    void setCorrect(int x); 
-    void setIncorrect(int y); 
+public:
+	Response(Code guessCode, Code answerCode);
+	Response();
 
-    int getCorrect();
-    int getIncorrect(); 
-    void printCode(vector <int> c0de)
-//prints a given code, useful for debugging
-{
-    for(int i = 0; i < c0de.size(); i++)
-        cout << c0de[i]<<", ";
-}
-     private: 
+	void setCorrect(Code guessCode, Code answerCode);
+	void setIncorrect(Code guessCode, Code answerCode);
+	int getCorrect();
+	int getIncorrect();
 
-     int numCorrect; 
-     int numIncorrect; 
+	friend bool operator== (Response lhs, Response rhs);
+	friend std::ostream& operator<< (std::ostream& ostr, Response r);
+
+
 };
 
+Response::Response(Code guessCode, Code answerCode)
+//response object Constructor. 
+{
+	setCorrect(guessCode, answerCode);
+	setIncorrect(guessCode, answerCode);
+}
 
 Response::Response()
+//Default Response object Constructor
 {
-int numCorrect = 0; 
-int numIncorrect = 0; 
+	numberCorrect = 0;
+	numberIncorrect = 0;
 }
 
-void Response::setCorrect(int x)
+void Response::setCorrect(Code guessCode, Code answerCode)
+//set value of numberCorrect
 {
-//cout << "enter a number" << endl; 
-//cin >> x; 
-numCorrect = x; 
+	numberCorrect = answerCode.checkCorrect(guessCode);
 }
 
-void Response::setIncorrect(int y)
+void Response::setIncorrect(Code guessCode, Code answerCode)
+//set value of numberIncorrect
 {
-numIncorrect = y;     
+	numberIncorrect = answerCode.checkIncorrect(guessCode);
 }
 
 int Response::getCorrect()
+//get the value of numberCorrect
 {
-    return numCorrect; 
+	return numberCorrect;
 }
 
 int Response::getIncorrect()
+//get the value of numberIncorrect
 {
-    return numIncorrect; 
+	return numberIncorrect;
+}
+
+bool operator== (Response lhs, Response rhs)
+{
+	if (lhs.getCorrect() == rhs.getCorrect() &&
+		lhs.getIncorrect() == rhs.getIncorrect())
+		return true;
+	else
+		return false;
+}
+
+std::ostream& operator<< (std::ostream& ostr, Response r)
+{
+	ostr<< "Number digits in right place: " << r.getCorrect()
+		<<"; Number digits in wrong place: "<< r.getIncorrect();
+	return ostr;
 }
 
