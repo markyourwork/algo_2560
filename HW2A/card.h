@@ -16,24 +16,28 @@ int value;
 card();
 //creates a specified card
 card(string s, int v);
-
+//sets the face value of the card
 void setValue();
+//sets the suit of the card, one of  CLUBS, SPADES, HEARTS, DIAMONDS
 void setSuit();
-
+//returns the value on the card as an integer from 1 to 13
 int getValue() const;
+//returns the suit as a string
 string getSuit() const;
+//returns the color as a string
 string getColor() const;
-
+//prints the card
 friend ostream& operator<<(ostream& dealer, const card& c);
 
 private:
+//sets the color based on the suit
 void setColor();
 };
 
 card ::card()
 {
-value = 1;
-suit = "CLUBS";
+this->setValue();
+this->setSuit();
 this->setColor();
 }
 card::card(string s, int v)
@@ -107,7 +111,7 @@ ostream& operator<<(ostream& dealer, const card& c)
     }
   }
   else{
-    name = c.getValue();
+    name = to_string(c.getValue());
   }
   dealer << name << " of " << c.getSuit();
   return dealer;
