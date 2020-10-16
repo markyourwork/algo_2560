@@ -1,4 +1,8 @@
 //Padraic Burns and Yi-En Wu, Problem Set 1
+#ifndef card
+#define card
+
+
 
 #include <iostream>
 #include <stdlib.h>
@@ -116,3 +120,4 @@ ostream& operator<<(ostream& dealer, const card& c)
   dealer << name << " of " << c.getSuit();
   return dealer;
 }
+#endif
