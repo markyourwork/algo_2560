@@ -1,5 +1,8 @@
 //Padraic Burns and Yi-En Wu, Problem Set 1
 
+
+
+#include "d_node.h"
 #include <iostream>
 #include <stdlib.h>
 #include <vector>
