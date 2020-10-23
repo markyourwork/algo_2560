@@ -7,7 +7,8 @@
 #include <vector>
 #include "Deck.h"
 
-
+//requested function from assignment
+//plays the games as specified
 double playFlip(Deck& currHand)
 {
 	double score = 0;
@@ -50,7 +51,7 @@ double playFlip(Deck& currHand)
 			std::cout << "You picked this card: " << std::endl;
 			std::cout << currHand.getCard(userInput) << std::endl;
 
-			// calculate score based on project sheet
+			// calculate score based on the given project sheet
 
 			switch (currCard.getValue())
 			{
@@ -114,12 +115,10 @@ int main()
 	for (int i = 1; i <= numShuffles; i++)
 	{
 		d.shuffle();
-
 	}
 
 	// post shuffle deck
 	std::cout << "Post-shuffle" << d << std::endl;
-
 	playFlip(d);
 
 	return 0;
