@@ -1,5 +1,5 @@
-//Padraic Burns and yien wu 
-//Project 3a
+//Padraic Burns and Yien Wu 
+//Project 3b
 //Dictionary class definition
 
 #include "Dictionary.h"

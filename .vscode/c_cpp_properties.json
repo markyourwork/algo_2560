@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}",
+                "C:\\MinGW\\lib\\gcc\\mingw32\\9.2.0",
+                "C:\\MinGW\\lib\\gcc\\mingw32\\9.2.0\\include\\c++",
+                "C:\\Users\\padra\\Documents\\GitHub\\algo_2560\\project2b"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "C:\\MinGW\\bin\\gcc.exe",
+            "cStandard": "gnu18",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "gcc-x86"
+        }
+    ],
+    "version": 4
+}

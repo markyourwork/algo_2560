@@ -1,5 +1,5 @@
 //Padraic Burns and yien wu 
-//Project 3a
+//Project 3b
 //Grid class definition
 
 #include "Grid.h"
@@ -29,14 +29,14 @@ Grid::Grid(std::string fileName)
 			fin >> strMat[i][j];
 	}
 }
-
+//return the number of rows in the grid
 int Grid::getNumRows()
 {
 	return numRows;
 }
 
-matrix<std::string> Grid::getMat()
 //Returns strMat
+matrix<std::string> Grid::getMat()
 {
 	return strMat;
 }

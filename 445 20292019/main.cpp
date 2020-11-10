@@ -1,5 +1,5 @@
 //Padraic Burns and yien wu 
-//Project 3a
+//Project 3b
 //Define the main fucntion and execute program.
 //definitions for findMatches() and search() are included 
 
@@ -12,7 +12,7 @@ void findMatches(Dictionary d, Grid g)
 	//Set max length of each list
 	int maxLength = g.getNumRows();
 	int row, column, dictResult;
-	std::string strToBuild="";
+	std::string strToBuild = "";
 	matrix<std::string> mat = g.getMat();
 
 	//store strings from the grid matching dictionary

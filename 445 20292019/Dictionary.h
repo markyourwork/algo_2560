@@ -1,5 +1,5 @@
 //Padraic Burns and yien wu 
-//Project 3a
+//Project 3b
 //Header for Dictionary Class
 #pragma once
 #ifndef Dictionary_h

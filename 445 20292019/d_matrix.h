@@ -1,5 +1,5 @@
-//Padraic Burns and yien wu 
-//Project 3a
+//Padraic Burns and Yien Wu 
+//Project 3b
 #ifndef MATRIX_CLASS
 #define MATRIX_CLASS
 
@@ -14,14 +14,15 @@ template <typename T>
 class matrix
 {
   public:
-   matrix(int numRows = 1, int numCols = 1, const T& initVal = T());
-   // constructor.
+  // constructor.
    // Postcondition: create array having numRows x numCols elements
    // all of whose elements have value initVal
+   matrix(int numRows = 1, int numCols = 1, const T& initVal = T());
+   
 
    vector<T>& operator[] (int i);
    // index operator.
-   // Precondition: 0 <= i < nRows. a violation of this
+   // Precondition: 0 <= i < n Rows. a violation of this
    // precondition throws the indexRangeError exception.
    // Postcondition: if the operator is used on the left-hand
    // side of an assignment statement, an element of row i 
@@ -30,10 +31,11 @@ class matrix
    const vector<T>& operator[](int i) const;
    // version for constant objects
 
+   // return number of rows   
    int rows() const;
-   // return number of rows
-   int cols() const;
+
    // return number of columns
+   int cols() const;
 
    void resize(int numRows, int numCols);
    // modify the matrix size.
@@ -79,20 +81,22 @@ const vector<T>& matrix<T>::operator[] (int i) const
    return mat[i];
 }
 
+// returns number of rows
 template <typename T>
 int matrix<T>::rows() const
 {
    return nRows;
 }
 
+// returns number of columns
 template <typename T>
 int matrix<T>::cols() const
 {
    return nCols;
 }
 
-template <typename T>
-void matrix<T>::resize(int numRows, int numCols)
+// modify the matrix size.
+template <typename T>void matrix<T>::resize(int numRows, int numCols)
 {
    int i;
    
