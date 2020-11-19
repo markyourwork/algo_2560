@@ -1,3 +1,6 @@
+// YIEN WU and Padraic Burns 
+// Project 4a
+// error/exception case information
 #ifndef EXCEPTION_CLASSES
 #define EXCEPTION_CLASSES
 

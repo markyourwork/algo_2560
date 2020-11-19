@@ -17,7 +17,6 @@ Grid::Grid(std::string fileName)
 		std::cerr << "Cannot open " << fileName << std::endl;
 		return;
 	}
-
 	//Read in matrix numRows and numCols
 	fin >> numRows >> numCols;
 	//Resize strMat according to numRows and numCols

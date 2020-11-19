@@ -1,5 +1,6 @@
 //Padraic Burns and Yien Wu 
 //Project 3b
+
 #ifndef MATRIX_CLASS
 #define MATRIX_CLASS
 

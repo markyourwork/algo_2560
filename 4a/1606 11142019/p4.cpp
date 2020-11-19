@@ -17,7 +17,7 @@ const int Blank = -1;  // Indicates that a cell is blank
 const int SquareSize = 3;  //  The number of cells in a small square
 
 
-const int BoardSize = SquareSize * SquareSize;
+const int BoardSize = SquareSize * SquareSize; //usefull variable for use later
 
 const int MinValue = 1;
 const int MaxValue = 9;
@@ -55,7 +55,7 @@ board::board(int sqSize)
 }
 
 void board::clear()
-// 
+// emptys the contents of the board, sets all to blank
 {
    for (int i = 1; i <= BoardSize; i++)
       for (int j = 1; j <= BoardSize; j++)
@@ -89,8 +89,6 @@ void board::initialize(ifstream &fin)
 	   for (int j = 1; j <= BoardSize; j++)
 	   {
 		   fin >> ch;
-
-		  
 		   if (ch != '.')
 		   {
 			   int val = ch - '0';
@@ -115,9 +113,7 @@ void board::resetCell(int i, int j)
 	//Get value at cell (i,j)
 	int val = getCell(i, j);
 
-
 	value[i][j] = Blank;
-
 
 	row[i][val] = false;
 	col[j][val] = false;
@@ -153,6 +149,7 @@ bool board::isBlank(int i, int j)
 }
 
 bool board::isSolved()
+//check if the board has been completely solved
 {
 	for (int i = 0; i < BoardSize; i++)
 	{
@@ -164,8 +161,6 @@ bool board::isSolved()
 				return false;
 		}
 	}
-
-
 	cout << "Solved board: " << endl;
 	printBoard();
 	return true;
@@ -243,7 +238,6 @@ void board::printConflicts()
 int main()
 {
    ifstream fin;
-   
    // Read the sample grid from the file
    string fileName = "sudoku1.txt";
 
@@ -257,7 +251,6 @@ int main()
    try
    {
       board b1(SquareSize);
-
       while (fin && fin.peek() != 'Z')
       {
 	 b1.initialize(fin);

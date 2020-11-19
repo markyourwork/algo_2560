@@ -1,3 +1,6 @@
+// YIEN WU and Padraic Burns 
+// Project 4a
+//Matrix class data
 #ifndef MATRIX_CLASS
 #define MATRIX_CLASS
 
@@ -93,7 +96,6 @@ template <typename T>
 void matrix<T>::resize(int numRows, int numCols)
 {
    int i;
-   
    // handle case of no size change with a return
    if (numRows == nRows && numCols == nCols)
       return;
